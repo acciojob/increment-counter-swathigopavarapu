@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+    <title>Increment Counter</title>
+  </head>
+  <body>
+    <p id="counter">0</p>
+    <button id="incrementBtn">Increment</button>
 
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+    <script>
+      const counterEl = document.getElementById("counter");
+      const incrementBtn = document.getElementById("incrementBtn");
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
+      incrementBtn.addEventListener("click", () => {
+        let current = parseInt(counterEl.textContent);
+        alert(current);
+        counterEl.textContent = current + 1;
+      });
+    </script>
+  </body>
 </html>
