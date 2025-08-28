@@ -8,7 +8,7 @@ let count = 0;
 
 incrementBtn.addEventListener("click", function () {
   // Show alert with the un-incremented value
-  alert(count);
+  alert("OK Increment value: " + count);
 
   // Increment the counter
   count++;
