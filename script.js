@@ -1,16 +1,30 @@
-//your JS code here. If required.
+// Standard boilerplate for Node.js based platforms
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
 
-const counterEl = document.getElementById("counter");
-const incrementBtn = document.getElementById("incrementBtn");
+let inputString = "";
+let currentLine = 0;
 
-// Initial value
-let count = 0;
-
-incrementBtn.addEventListener("click", function () {
-  // Show alert with the un-incremented value
-  alert("OK Increment value: " + count);
-
-  // Increment the counter
-  count++;
-  counterEl.innerText = count;
+process.stdin.on("data", function(inputStdin) {
+    inputString += inputStdin;
 });
+
+process.stdin.on("end", function() {
+    inputString = inputString.trim().split("\n");
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+function main() {
+    // Example: read a number
+    let n = parseInt(readLine().trim());
+
+    // Example: logic (square the number)
+    let result = n * n;
+
+    // Print final result
+    console.log(result);
+}
